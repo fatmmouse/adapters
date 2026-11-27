@@ -9,7 +9,9 @@
     "number_of_runs": 3,
     "notes": "PROPOSED, NOT YET RUN. Oracle evidence (replay): the same published response is scored by the original Tencent worker and by the Harbor verifier, so differences isolate the evaluation pipeline. Cohort: the 60-task --split parity sample (SHA-256 of artifactsbench-parity-v1/<index>, chosen before any scores were seen); task 1323 has no published response, leaving 59. Same judge model, endpoint, tokenizer revision and screenshot procedure on both sides. Fill from diagnostics/parity_summary.py.",
     "original_parity_repo": "Pending",
-    "adapter_pr": [],
+    "adapter_pr": [
+      "https://github.com/harbor-index/adapters/pull/50"
+    ],
     "dataset_pr": [],
     "parity_pr": [],
     "metrics": [
@@ -33,7 +35,9 @@
     "number_of_runs": 3,
     "notes": "PROPOSED, NOT YET RUN. Scenario 2 (LLM-based benchmark, no compatible agent), following EvoEval: a fork of the original repository runs codex in a container on each question and passes its answer.md to Tencent's unchanged scoring. The Harbor side runs the same codex version and model with -a codex. Same judge on both sides. Fill from diagnostics/parity_summary.py.",
     "original_parity_repo": "Pending",
-    "adapter_pr": [],
+    "adapter_pr": [
+      "https://github.com/harbor-index/adapters/pull/50"
+    ],
     "dataset_pr": [],
     "parity_pr": [],
     "metrics": [
