@@ -9,9 +9,10 @@ datasets:
 agents:
   - name: oracle
 
-# Generation parity (after the maintainer confirms the model):
+# Codex parity (Scenario 2, after the maintainer confirms the model). Use the full
+# 60-task dataset generated without --reference-dir, and the same codex version as the original fork:
 # agents:
-#   - import_path: artifactsbench.oneshot:OneShotAgent
+#   - name: codex
 #     model_name: <model>
 
 environment:
