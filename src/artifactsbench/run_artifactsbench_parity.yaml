@@ -1,0 +1,23 @@
+# Replay parity on a cloud worker. Generate the dataset first:
+#   uv run --locked python -m artifactsbench.reference --release <release.jsonl> --split parity --output-dir references-parity
+#   uv run --locked artifactsbench --split parity --reference-dir references-parity --output-dir datasets/artifactsbench-parity
+# Task 1323 has no published response and therefore no solution; exclude it from oracle runs.
+# Requires ARTIFACTSBENCH_JUDGE_API_KEY, ARTIFACTSBENCH_JUDGE_BASE_URL and ARTIFACTSBENCH_JUDGE_MODEL on the host.
+datasets:
+  - path: datasets/artifactsbench-parity
+
+agents:
+  - name: oracle
+
+# Generation parity (after the maintainer confirms the model):
+# agents:
+#   - import_path: artifactsbench.oneshot:OneShotAgent
+#     model_name: <model>
+
+environment:
+  type: docker
+  delete: true
+
+orchestrator:
+  type: local
+  n_concurrent_trials: 4
